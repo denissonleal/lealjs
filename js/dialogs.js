@@ -6,8 +6,8 @@ $(function() {
 
 		/*Diálogo de espera*/
 		this.waiting = function(m) {
-			html = '<div class="dialog z-depth-1 dialog-waiting" hidden>'+
-					'<div class="dialog-body text-center">' + m + '</div>'+
+			html = '<div class="dialog z-depth-1 dialog-waiting" hidden>' +
+				'<div class="dialog-body text-center">' + m + '</div>' +
 				'</div>';
 			this.open(html);
 		};
@@ -23,26 +23,26 @@ $(function() {
 			data.cancel.event = cancel || "";
 			data.cancel.label = "CANCELAR";
 			data.confirm.label = "OK";
-			if(typeof title == "object") {
+			if (typeof title == "object") {
 				data = $.extend(true, data, title);
 			}
-			html = '<div class="dialog z-depth-1" hidden>'+
-				'<div class="dialog-header">' + data.title + '</div>'+
-				'<div class="dialog-body">' + data.message + '</div>'+
-				'<div class="dialog-footer">'+
-					'<button class="btn-flat dialog-cancel waves-effect">'+ data.cancel.label +'</button>'+
-					'<button class="btn-flat dialog-ok waves-effect">'+ data.confirm.label +'</button>'+
-				'</div>'+
-			'</div>';
+			html = '<div class="dialog z-depth-1" hidden>' +
+				'<div class="dialog-header">' + data.title + '</div>' +
+				'<div class="dialog-body">' + data.message + '</div>' +
+				'<div class="dialog-footer">' +
+				'<button class="btn-flat dialog-cancel waves-effect">' + data.cancel.label + '</button>' +
+				'<button class="btn-flat dialog-ok waves-effect">' + data.confirm.label + '</button>' +
+				'</div>' +
+				'</div>';
 			this.open(html);
 
 			$(".dialog-cancel").on("click", function() {
-				if(typeof data.cancel.event == 'function') data.cancel.event();
+				if (typeof data.cancel.event == 'function') data.cancel.event();
 				$.dialog.close();
 			});
 
 			$(".dialog-ok").on("click", function() {
-				if(typeof data.confirm.event == 'function') data.confirm.event();
+				if (typeof data.confirm.event == 'function') data.confirm.event();
 				$.dialog.close();
 			});
 			$(".dialog-ok").focus()
@@ -50,19 +50,19 @@ $(function() {
 
 		this.prompt = function(title, m, label, selector, func) {
 			func = func || "";
-			html = '<div class="dialog z-depth-1" hidden>'+
-					'<div class="dialog-header">' + title + '</div>'+
-					'<div class="dialog-body">' + m +
-						'<br><br>'+
-						'<label>' + label + '</label>'+
-						'<div class="form-group">'+
-							'<input	class="' + selector + ' form-control" name="' + selector + '" autofocus type="text">'+
-						'</div>'+
-					'</div>'+
-					'<div class="dialog-footer">'+
-						'<button class="btn-flat dialog-cancel waves-effect">CANCELAR</button>'+
-						'<button class="btn-flat dialog-ok waves-effect">OK</button>'+
-					'</div>'+
+			html = '<div class="dialog z-depth-1" hidden>' +
+				'<div class="dialog-header">' + title + '</div>' +
+				'<div class="dialog-body">' + m +
+				'<br><br>' +
+				'<label>' + label + '</label>' +
+				'<div class="form-group">' +
+				'<input	class="' + selector + ' form-control" name="' + selector + '" autofocus type="text">' +
+				'</div>' +
+				'</div>' +
+				'<div class="dialog-footer">' +
+				'<button class="btn-flat dialog-cancel waves-effect">CANCELAR</button>' +
+				'<button class="btn-flat dialog-ok waves-effect">OK</button>' +
+				'</div>' +
 				'</div>';
 			this.open(html);
 
@@ -75,12 +75,12 @@ $(function() {
 
 		/*Diálogo de informação*/
 		this.info = function(title, m) {
-			html = '<div class="dialog z-depth-1">'+
-					'<div class="dialog-header">' + title + '</div>'+
-					'<div class="dialog-body">' + m + '</div>'+
-					'<div class="dialog-footer">'+
-						'<button class="btn-flat btn-block dialog-cancel waves-effect">FECHAR</button>'+
-					'</div>'+
+			html = '<div class="dialog z-depth-1">' +
+				'<div class="dialog-header">' + title + '</div>' +
+				'<div class="dialog-body">' + m + '</div>' +
+				'<div class="dialog-footer">' +
+				'<button class="btn-flat btn-block dialog-cancel waves-effect">FECHAR</button>' +
+				'</div>' +
 				'</div>';
 			this.open(html);
 			$(".dialog-cancel").on("tapstart, click", function() {
@@ -109,8 +109,8 @@ $(function() {
 			}).show(0);
 
 			$(document).keyup(function(e) {
-				if ( e.keyCode == 27 && $(".dialog").length && !$(".dialog-waiting" ).length )
-				  $.dialog.close();
+				if (e.keyCode == 27 && $(".dialog").length && !$(".dialog-waiting").length)
+					$.dialog.close();
 			});
 		};
 

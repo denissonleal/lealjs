@@ -42,51 +42,50 @@ function routes(e) { //console.log('routes');
   $(".all-views").hide();
   $(".menu .active").removeClass("active");
 
-  if ( typeof $.ctrl[hash] == 'undefined' ) $.controller(hash);
+  if (typeof $.ctrl[hash] == 'undefined') $.controller(hash);
   else $.ctrl[hash].show();
   current_page = hash;
 }
 
 function redirect(route) {
   var hash = location.hash.replace('#', '');
-  if ( typeof route == 'object' ) route = route.join('/');
+  if (typeof route == 'object') route = route.join('/');
   route = route.replace('#', '');
-  if ( route == hash )
+  if (route == hash)
     routes();
   else
     location.hash = route;
 }
 
 function controller(id, obj) {
-  if ( typeof obj == 'function' ) {
+  if (typeof obj == 'function') {
     var c = new obj();
 
-    for ( var i in c ) {
-      if ( typeof c[i] == 'function' ) {
+    for (var i in c) {
+      if (typeof c[i] == 'function') {
         c[i] = c[i].bind(c);
       }
     }
-    if ( !c.view ) c.view = '#'+id;
+    if (!c.view) c.view = '#' + id;
 
     $.ctrl[id] = c;
-  }
-  else
+  } else
     $.ctrl[id] = obj;
-
 
   if (typeof $.ctrl[id].initialize == 'function')
     $($.ctrl[id].initialize);
 }
 
 var initial_hash = '';
+
 function initial(hash) {
   initial_hash = hash;
 }
 
 function argument(i) {
   var hash = location.hash.replace('#', '').split('/');
-  if ( hash.length > 1 && !hash[0].length ) i++;
-  return ( typeof hash[i] == 'undefined' ? null : hash[i] );
+  if (hash.length > 1 && !hash[0].length) i++;
+  return (typeof hash[i] == 'undefined' ? null : hash[i]);
 }
 
 $(function() {

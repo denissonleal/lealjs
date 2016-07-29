@@ -8,8 +8,8 @@ $.each(["put", "delete", "post", "get"], function(i, method) {
   $[method] = function(url, data, callback, fail) {
     var type_user = $('meta[name=type_user]').length ? $('meta[name=type_user]').attr('value') : '';
 
-    var url_complete = serverUrl +'/'+ type_user +'/'+ url;
-    while( url_complete.indexOf("//") >= 0 ) url_complete = url_complete.replace(/\/\//gi, "/");
+    var url_complete = serverUrl + '/' + type_user + '/' + url;
+    while (url_complete.indexOf("//") >= 0) url_complete = url_complete.replace(/\/\//gi, "/");
 
     return $.ajax({
       url: url_complete,
@@ -24,7 +24,7 @@ $.each(["put", "delete", "post", "get"], function(i, method) {
 });
 
 $.fn.send = function(success, error) {
-  if ( typeof erro == 'undefined' ) error = error_send;
+  if (typeof erro == 'undefined') error = error_send;
   $(this).submit(function(e) {
     e.preventDefault();
     if (!$(this).validation()) {
@@ -32,7 +32,7 @@ $.fn.send = function(success, error) {
       return false;
     }
     // $.dialog.waiting("Aguarde...");
-    $.post($(this).attr("action"), $(this).serialize(), success, error).done(function(){
+    $.post($(this).attr("action"), $(this).serialize(), success, error).done(function() {
       // if($(".dialog-waiting").length) $.dialog.close();
     });
   });
@@ -41,24 +41,25 @@ $.fn.send = function(success, error) {
 $.fn.sendImage = function(success, error) {
   $(this).submit(function() {
     $.dialog.waiting("Enviando...");
-      $.ajax({
+    $.ajax({
       type: "POST",
-      url: serverUrl+$(this).attr("action"),
+      url: serverUrl + $(this).attr("action"),
       data: new FormData(this),
       enctype: 'multipart/form-data',
-    processData: false, // tell jQuery not to process the data
-      contentType: false   // tell jQuery not to set contentType
-    }).success(success).fail(error).done(function(){
-      if($(".dialog-waiting").length) $.dialog.close();
+      processData: false, // tell jQuery not to process the data
+      contentType: false // tell jQuery not to set contentType
+    }).success(success).fail(error).done(function() {
+      if ($(".dialog-waiting").length) $.dialog.close();
     });
     return false;
   });
   $(this).find('input[type="file"]').change(function() {
-    var str = $(this).val(), arr = [/.png$/, /.jpg$/, /.jpge$/];
+    var str = $(this).val(),
+      arr = [/.png$/, /.jpg$/, /.jpge$/];
     for (var i = 0; i < arr.length; i++)
-      if(str.search(arr[i]) > 0) {
+      if (str.search(arr[i]) > 0) {
         $(this).closest('form').submit();
-      return;
+        return;
       }
     $.alert("Arquivo inválido!");
   });
@@ -85,11 +86,11 @@ $.fn.validation = function() {
   $(this).find(".has-error").removeClass("has-error");
   $(inputs).removeClass('invalid');
   $(".callback").hide();
-  for(var i = 0 ; i < $(inputs).length ; i++ ) {
+  for (var i = 0; i < $(inputs).length; i++) {
     var regex = $(inputs).eq(i).attr('regex');
-    if(regex && regex.length && $(inputs).eq(i).is(":enabled")) {
+    if (regex && regex.length && $(inputs).eq(i).is(":enabled")) {
       var val = $(inputs).eq(i).is(":radio") || $(inputs).eq(i).is(":checkbox") ?
-        $(this).find("input:"+$(inputs).eq(i).attr("type")).filter("[name='"+$(inputs).eq(i).attr("name")+"']").filter(":checked").val() :
+        $(this).find("input:" + $(inputs).eq(i).attr("type")).filter("[name='" + $(inputs).eq(i).attr("name") + "']").filter(":checked").val() :
         $(inputs).eq(i).val();
       val = val ? val : "";
       // console.log($(inputs).eq(i).attr("name"), val, regex);
@@ -97,9 +98,7 @@ $.fn.validation = function() {
         $(inputs).eq(i).closest(".form-group").addClass("has-error").find(".callback").show();
         $(inputs).eq(i).addClass('invalid').focus();
         return false;
-      }
-      else {
-      }
+      } else {}
     }
   }
   return true;

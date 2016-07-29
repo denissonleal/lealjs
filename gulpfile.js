@@ -7,5 +7,5 @@ elixir.config.publicPath = 'dist';
 elixir(function(mix) {
 	mix.scripts('js/*.js', 'dist/leal.min.js');
 	mix.styles('css/*.css', 'dist/leal.min.css');
-//     mix.sass('app.scss');
+	//  mix.sass('app.scss');
 });
