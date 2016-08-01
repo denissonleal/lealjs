@@ -40,7 +40,7 @@ function routes(e) { //console.log('routes');
   }
 
   $(".all-views").hide();
-  $(".active", ".sidebar-menu-itens").removeClass("active");
+  $(".active", ".sidebar-menu-items").removeClass("active");
 
   if (typeof $.ctrl[hash] == 'undefined') $.controller(hash);
   else $.ctrl[hash].show();
