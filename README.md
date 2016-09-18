@@ -27,8 +27,10 @@ Include the library:
 **lealjs** depends on [jQuery](https://github.com/jquery/jquery).
 
 ## Methods
-`$.dialog.info('Title','Description');`
-`$.alert('Message...');`
+$.dialog.info('Title','Description');
+
+$.alert('Message...');
+
 `...`
 
 
