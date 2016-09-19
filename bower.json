@@ -1,0 +1,24 @@
+{
+    "name": "Lealjs",
+    "version": "",
+    "description": "Js lib to Laravel with models, views, controllers and much more!",
+    "authors": [
+        "Denisson Leal <denissonleal@gmail.com>"
+    ],
+    "license": "MIT",
+    "main": [
+        "dist/leal.min.css",
+        "dist/leal.min.js"
+    ],
+    "keywords": [
+        "laravel",
+        "models",
+        "views",
+        "controllers"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components"
+    ]
+}
