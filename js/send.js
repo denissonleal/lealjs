@@ -1,6 +1,7 @@
 /**
- * Necessário declarar o objeto para que não ocorram erros
+ * Declare the object so that no errors occur
  */
+
 $.support.cors = true;
 var serverUrl = "/";
 

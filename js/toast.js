@@ -1,3 +1,4 @@
+// Toast
 $(function() {
   $.alert = function(m, t) {
     t = t || 5000;

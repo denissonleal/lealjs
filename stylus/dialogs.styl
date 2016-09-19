@@ -1,0 +1,64 @@
+.dialog-overlay
+  position: fixed
+  z-index: 1050
+  top: 0
+  left: 0
+  right: 0
+  height: 100%
+  opacity: 0.5
+  background-color: #000
+
+.dialog
+  width: 350px
+  position: fixed
+  z-index: 1060
+  background-color: #fff
+  border-radius: 4px
+
+.dialog.dialog-header
+  padding: 15px
+  font-size: 1.1em
+  font-weight: 600
+
+.dialog.dialog-body
+  padding: 20px 15px
+  font-size: 1.0em
+  color: #444
+
+.dialog.dialog-footer
+  padding-top: 15px
+  border: none
+  outline: 0px
+
+.btn-flat.btn-block
+  margin-bottom: 0px
+  width: 100%
+
+.btn-flat
+  float: left
+  width: 50%
+  background: transparent
+  font-weight: bold
+  border: none
+  padding: 10px 0px
+  font-size: 11pt
+  border: none
+  outline: none
+
+.btn-flat:hover,
+.btn-flat:focus,
+.btn-flat:active,
+.btn-flat:click
+  border: none
+  -webkit-box-shadow: none
+  box-shadow: none
+  outline: 0
+  outline-offset: 0
+
+@media screen and (max-width: 480px)
+  .dialog
+    width: 90%
+    position: fixed
+    z-index: 1060
+    background-color: #fff
+    border-radius: 4px

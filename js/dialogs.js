@@ -1,10 +1,11 @@
+// Dialogs
 $(function() {
 	$('body').append($('<div>', { 'class': 'dialog-overlay', 'hidden': true }));
 	$.dialog = new function() {
 		this.height = $(window).height();
 		this.width = $(window).width();
 
-		/*Diálogo de espera*/
+		// Waiting
 		this.waiting = function(m) {
 			html = '<div class="dialog z-depth-1 dialog-waiting" hidden>' +
 				'<div class="dialog-body text-center">' + m + '</div>' +
@@ -12,9 +13,8 @@ $(function() {
 			this.open(html);
 		};
 
-		/*Diálogo de confirmação
-			 executa uma função.
-			*/
+		// Confirm
+		// Run a function
 		this.confirm = function(title, message, confirm, cancel) {
 			var data = { confirm: {}, cancel: {} };
 			data.title = title;
@@ -73,7 +73,7 @@ $(function() {
 			$(".dialog-ok").on("tapstart, click", func);
 		};
 
-		/*Diálogo de informação*/
+		// Info
 		this.info = function(title, m) {
 			html = '<div class="dialog z-depth-1">' +
 				'<div class="dialog-header">' + title + '</div>' +
@@ -89,16 +89,16 @@ $(function() {
 			$(".dialog-cancel").focus();
 		};
 
-		/*Coloca o diálogo no final do Body e show().*/
+		// Add dialog at the end of Body
 		this.open = function(html) {
 			$("body").append("<div class='dialog-overlay'></div>");
 			$("body").append(html);
-			//console.log([winH, winW]);
+			// console.log([winH, winW]);
 
 			if ($(window).width() <= 480) {
 				$(".dialog").width($(window).width() - 40);
 			}
-			//console.log([$(".dialog").height(), $(".dialog").width()]);
+			// console.log([$(".dialog").height(), $(".dialog").width()]);
 
 			var boxH = $(".dialog").height();
 			var boxW = $(".dialog").width();
