@@ -1,6 +1,9 @@
 # Lealjs
 > Js lib to Laravel with models, views, controllers and much more! :)
 
+## Demo
+`...`
+
 ## Install
 
 Install the component using [Bower](http://bower.io/):
@@ -27,7 +30,7 @@ Include the library:
 **lealjs** depends on [jQuery](https://github.com/jquery/jquery).
 
 ## Methods
-$.dialog.info('Title','Description');
+$.dialog.info('Title', 'Description');
 
 $.alert('Message...');
 
