@@ -57,6 +57,8 @@ $.alert('Message...');
 	$ gulp && gulp watch
 	```
 
+**Note:** Before commit, `$ gulp --production`
+
 ## Contributing
 
 1. Fork it!
