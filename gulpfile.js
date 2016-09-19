@@ -1,11 +1,22 @@
+// Gulp Tasks
 var elixir = require('laravel-elixir');
 
 elixir.config.assetsPath = '';
 elixir.config.publicPath = 'dist';
-// elixir.config.viewPath =
-// console.log(elixir.config);
+
+// Extensions
+require('laravel-elixir-stylus')
+
+
 elixir(function(mix) {
-	mix.scripts('js/*.js', 'dist/leal.min.js');
-	mix.styles('css/*.css', 'dist/leal.min.css');
-	//  mix.sass('app.scss');
+	// Js
+	mix.scripts('*.js', 'dist/leal.min.js');
+
+	// CSS
+	mix.stylus('*.styl', 'dist/leal.min.css');
+
+	// Browser Sync
+	mix.browserSync({
+		proxy: 'localhost:8000'
+	});
 });
