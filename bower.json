@@ -3,7 +3,9 @@
     "version": "",
     "description": "Js lib to Laravel with models, views, controllers and much more!",
     "authors": [
-        "Denisson Leal <denissonleal@gmail.com>"
+        "Denisson Leal <denissonleal@gmail.com>",
+        "Leandro Gonçalves <hi@leandrow.info>",
+        "Caio Ladislau <caiolaszlo@gmail.com>"
     ],
     "license": "MIT",
     "main": [
