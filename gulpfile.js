@@ -13,7 +13,7 @@ elixir(function(mix) {
 	mix.scripts('*.js', 'dist/leal.min.js');
 
 	// CSS
-	mix.stylus('*.styl', 'dist/leal.min.css');
+	mix.stylus('config.styl', 'dist/leal.min.css');
 
 	// Browser Sync
 	mix.browserSync({
