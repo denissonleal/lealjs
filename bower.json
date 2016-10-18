@@ -1,9 +1,10 @@
 {
-    "name": "Lealjs",
+    "name": "lealjs",
     "version": "",
     "description": "Js lib to Laravel with models, views, controllers and much more!",
     "authors": [
-        "Denisson Leal <denissonleal@gmail.com>",
+				"Denisson Leal <denissonleal@gmail.com>",
+        "Geidson Benício <geidsonc@gmail.com>",
         "Leandro Gonçalves <hi@leandrow.info>",
         "Caio Ladislau <caiolaszlo@gmail.com>"
     ],
