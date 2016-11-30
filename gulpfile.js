@@ -14,6 +14,7 @@ elixir(function(mix) {
 
 	// CSS
 	mix.stylus('config.styl', 'dist/leal.min.css');
+	mix.copy('fonts', 'dist/fonts');
 
 	// Browser Sync
 	mix.browserSync({
