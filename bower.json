@@ -1,27 +1,27 @@
 {
-    "name": "lealjs",
-    "version": "0.4.0",
-    "description": "Js lib to Laravel with models, views, controllers and much more!",
-    "authors": [
-	"Denisson Leal <denissonleal@gmail.com>",
-        "Geidson Benício <geidsonc@gmail.com>",
-        "Leandro Gonçalves <hi@leandrow.info>",
-        "Caio Ladislau <caiolaszlo@gmail.com>"
-    ],
-    "license": "MIT",
-    "main": [
-        "dist/leal.min.css",
-        "dist/leal.min.js"
-    ],
-    "keywords": [
-        "laravel",
-        "models",
-        "views",
-        "controllers"
-    ],
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components"
-    ]
+  "name": "lealjs",
+  "version": "0.4.0",
+  "description": "Js lib to Laravel with models, views, controllers and much more!",
+  "authors": [
+    "Denisson Leal <denissonleal@gmail.com>",
+    "Geidson Benício <geidsonc@gmail.com>",
+    "Leandro Gonçalves <hi@leandrow.info>",
+    "Caio Ladislau <caiolaszlo@gmail.com>"
+  ],
+  "license": "MIT",
+  // "main": [
+  //   "dist/leal.css",
+  //   "dist/leal.js"
+  // ],
+  "keywords": [
+    "laravel",
+    "models",
+    "views",
+    "controllers"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
 }
