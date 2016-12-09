@@ -145,3 +145,8 @@ function removeAccents(str) {
   }
   return str.join('');
 }
+
+// Loading
+function loading() {
+  return $('<div>', {'class': 'circle' });
+}
