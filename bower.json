@@ -8,6 +8,10 @@
     "Caio Ladislau <caiolaszlo@gmail.com>"
   ],
   "license": "MIT",
+	"main": [
+		"dist/leal.min.css",
+		"dist/leal.min.js"
+	],
   "keywords": [
     "laravel",
     "models",

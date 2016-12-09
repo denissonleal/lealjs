@@ -7,6 +7,10 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "laravel-elixir": "^5.0.0",
-    "laravel-elixir-stylus": "^1.0.1"
+		"laravel-elixir-stylus": "^1.0.1",
+    "autoprefixer": "^6.5.3",
+    "poststylus": "^0.2.3",
+    "lost": "^7.0.3",
+    "css-mqpacker": "^5.0.1"
   }
 }
