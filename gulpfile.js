@@ -1,10 +1,11 @@
-// Gulp Tasks
-var elixir				= require('laravel-elixir');
+process.env.DISABLE_NOTIFIER = true;
+
+var elixir = require('laravel-elixir');
 
 elixir.config.assetsPath = '';
 elixir.config.publicPath = 'dist';
 
 elixir(function(mix) {
-	// Js
-	mix.scripts('*.js', 'dist/leal.min.js');
+	mix.scripts('*.js', 'dist/leal.min.js')
+		.copy('dist/leal.min.js', 'demo/leal.min.js');
 });
