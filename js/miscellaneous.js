@@ -1,7 +1,3 @@
-function clone(x) {
-	return JSON.parse(JSON.stringify(x));
-}
-
 Number.prototype.format = function(c, d, t) {
 	var n = this,
 		c = isNaN(c = Math.abs(c)) ? 2 : c,
@@ -12,7 +8,7 @@ Number.prototype.format = function(c, d, t) {
 		j = (j = i.length) > 3 ? j % 3 : 0;
 	return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };
-Number.defineProperty(Function.prototype, "format", { enumerable: false });
+// Number.defineProperty(Function.prototype, "format", { enumerable: false });
 
 Function.prototype.bind = function(scope) {
 	var _function = this;
@@ -38,27 +34,27 @@ String.prototype.removeAccents = function(str) {
 };
 Object.defineProperty(String.prototype, "removeAccents", { enumerable: false });
 
-function toggle_mask() {
-	if ($("input").mask) {
-		$('.mask-date').unmask().mask('00/00/0000', {});
-		$('.mask-time').unmask().mask('00:00:00', { placeholder: "__:__:__" });
-		$('.mask-date-time').unmask().mask('00/00/0000 00:00:00', { placeholder: "__/__/____ __:__:__" });
-		$('.mask-cep').unmask().mask('00000-000', { placeholder: "_____-___" });
-		// $('.mask-phone').mask('(00) 0000-0000');
-		$('.mask-cpf').unmask().mask('000.000.000-00', { placeholder: "___.___.___-__" });
-		$('.mask-cns').unmask().mask('000 0000 0000 0000', { placeholder: "___ ____ ____ ____" });
-		$('.mask-cnpj').unmask().mask('00.000.000/0000-00', { placeholder: "__.___.___/____-__" });
-		$('.mask-money').unmask().mask('000.000.000.000.000,00', { reverse: true });
-		$('.mask-thousand').unmask().mask('000.000.000.000.000', {reverse: true});
-		$('.mask-number').unmask().mask('#', { reverse: true });
+// function toggle_mask() {
+// 	if ($("input").mask) {
+// 		$('.mask-date').unmask().mask('00/00/0000', {});
+// 		$('.mask-time').unmask().mask('00:00:00', { placeholder: "__:__:__" });
+// 		$('.mask-date-time').unmask().mask('00/00/0000 00:00:00', { placeholder: "__/__/____ __:__:__" });
+// 		$('.mask-cep').unmask().mask('00000-000', { placeholder: "_____-___" });
+// 		// $('.mask-phone').mask('(00) 0000-0000');
+// 		$('.mask-cpf').unmask().mask('000.000.000-00', { placeholder: "___.___.___-__" });
+// 		$('.mask-cns').unmask().mask('000 0000 0000 0000', { placeholder: "___ ____ ____ ____" });
+// 		$('.mask-cnpj').unmask().mask('00.000.000/0000-00', { placeholder: "__.___.___/____-__" });
+// 		$('.mask-money').unmask().mask('000.000.000.000.000,00', { reverse: true });
+// 		$('.mask-thousand').unmask().mask('000.000.000.000.000', {reverse: true});
+// 		$('.mask-number').unmask().mask('#', { reverse: true });
 
-		$('.mask-phone').unmask().mask(function(val) {
-			return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
-		}, {
-			onKeyPress: function(val, e, field, options) {
-				// field.mask(maskBehavior.apply({}, arguments), options);
-			},
-			placeholder: "(__) ____-____"
-		});
-	}
-}
+// 		$('.mask-phone').unmask().mask(function(val) {
+// 			return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+// 		}, {
+// 			onKeyPress: function(val, e, field, options) {
+// 				// field.mask(maskBehavior.apply({}, arguments), options);
+// 			},
+// 			placeholder: "(__) ____-____"
+// 		});
+// 	}
+// }

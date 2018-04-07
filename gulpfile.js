@@ -6,6 +6,6 @@ elixir.config.assetsPath = '';
 elixir.config.publicPath = 'dist';
 
 elixir(function(mix) {
-	mix.scripts('*.js', 'dist/leal.min.js')
+	mix.scripts(['miscellaneous.js', 'l.js'], 'dist/leal.min.js')
 		.copy('dist/leal.min.js', 'demo/leal.min.js');
 });
