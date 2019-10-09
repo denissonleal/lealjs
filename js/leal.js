@@ -72,7 +72,7 @@ function toggle_mask() {
     $('.mask-cns').unmask().mask('000 0000 0000 0000', { placeholder: "___ ____ ____ ____" });
     $('.mask-cnpj').unmask().mask('00.000.000/0000-00', { placeholder: "__.___.___/____-__" });
     $('.mask-money').unmask().mask('000.000.000.000.000,00', { reverse: true });
-    $('.mask-thousand').unmask().mask('000 000 000 000 000', { reverse: true });
+		$('.mask-thousand').unmask().mask('000.000.000.000.000', {reverse: true});
     $('.mask-number').unmask().mask('#', { reverse: true });
 
     $('.mask-phone').unmask().mask(function(val) {
@@ -144,4 +144,9 @@ function removeAccents(str) {
     }
   }
   return str.join('');
+}
+
+// Loading
+function loading() {
+  return $('<div>', {'class': 'circle' });
 }

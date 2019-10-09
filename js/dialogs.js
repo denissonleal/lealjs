@@ -48,30 +48,47 @@ $(function() {
 			$(".dialog-ok").focus()
 		};
 
-		this.prompt = function(title, m, label, selector, func) {
-			func = func || "";
-			html = '<div class="dialog z-depth-1" hidden>' +
-				'<div class="dialog-header">' + title + '</div>' +
-				'<div class="dialog-body">' + m +
-				'<br><br>' +
-				'<label>' + label + '</label>' +
-				'<div class="form-group">' +
-				'<input	class="' + selector + ' form-control" name="' + selector + '" autofocus type="text">' +
-				'</div>' +
-				'</div>' +
-				'<div class="dialog-footer">' +
-				'<button class="btn-flat dialog-cancel waves-effect">CANCELAR</button>' +
-				'<button class="btn-flat dialog-ok waves-effect">OK</button>' +
-				'</div>' +
-				'</div>';
-			this.open(html);
+		this.prompt = function(obj) {
+		      var dial = {
+		        'title': "",
+		        'message': "",
+		        'label': "",
+		        'inputName': "input-dialog",
+		        'regex': "",
+		        'callbackMessage': "Campo obrigatório",
+		        'success': function() {}
+		      }
 
-			$(".dialog-cancel").on("tapstart, click", function() {
-				$.dialog.close();
-			});
+		      $.extend(dial, obj);
+		      html = '<div class="dialog z-depth-1" hidden>\
+										<div class="dialog-header">' + dial.title + '</div>\
+										<div class="dialog-body">' + dial.message + '\
+											<br>\
+											<div class="form-group">\
+												<label class="control-label">' + dial.label + '</label>\
+												<input	class="' + dial.inputName + '" name="' + dial.inputName + '" type="text" regex="'+ dial.regex +'"></form-group>\
+												<div class="callback">'+ dial.callbackMessage +'</div>\
+											</div>\
+										</div>\
+										<div class="dialog-footer">\
+											<button class="btn-flat dialog-cancel waves-effect">CANCELAR</button>\
+											<button class="btn-flat dialog-ok waves-effect">OK</button>\
+										</div>\
+									</div>';
+		      this.open(html);
 
-			$(".dialog-ok").on("tapstart, click", func);
-		};
+		      $(".dialog").find("[name='"+ dial.inputName +"']").focus();
+
+		      $(".dialog-cancel").on("click", function() {
+		        $.dialog.close();
+		      });
+
+		      $(".dialog-ok").on("click", function() {
+		        if (typeof func == "function") dial.success();
+		        $.dialog.close();
+		      });
+
+		    };
 
 		// Info
 		this.info = function(title, m) {
