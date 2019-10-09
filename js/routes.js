@@ -26,6 +26,7 @@ $.controller = function(name) {
     url: "js/controllers/" + name + ".js",
     type: "GET",
     dataType: "script",
+    async: false,
     error: function() {
       console.error("[$.controller] caminho inválido");
       // location.hash = "error";
